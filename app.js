@@ -8,6 +8,7 @@ var express                 = require("express"),
     Comment                 = require("./models/comment"),
     LocalStrategy           = require("passport-local"),
     passportLocalMongoose   = require("passport-local-mongoose"),
+    methodOverride          = require("method-override"),
     seedDB                  = require("./seeds")
 
 //REQUIRING ROUTES
@@ -21,6 +22,7 @@ mongoose.connect("mongodb://localhost/yelp_camp");
 app.set("view engine", "ejs");
 app.use(bodyParser.urlencoded({extended: true}));
 app.use(express.static(__dirname + "/public"));
+app.use(methodOverride("_method"));
 //SEED DATABASE COMMENTED OUT
 //seedDB();
 
