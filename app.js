@@ -18,7 +18,8 @@ var commentRoutes       = require("./routes/comments"),
     indexRoutes         = require("./routes/index")
     
 mongoose.set("useNewUrlParser", true);
-mongoose.connect("mongodb://localhost/yelp_camp");
+//mongoose.connect("mongodb://localhost/yelp_camp");
+mongoose.connect("mongodb://zienigma:5tEFCw5DPTqzG9y@ds135413.mlab.com:35413/dbpyelpcamp");
 
 app.set("view engine", "ejs");
 app.use(bodyParser.urlencoded({extended: true}));
